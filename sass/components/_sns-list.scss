@@ -1,0 +1,40 @@
+.sns-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sns-list__item {
+    @include circle();
+}
+
+.sns-list__link {
+    width: 100%;
+    height: 100%;
+    // background-color: $accent-color;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #000000;
+
+    @include transition ();
+    transition-property: fill, background-color;
+    &:focus,
+    &:hover {
+        // background-color: #000000;
+        fill: $accent-color;
+    }
+}
+
+
+
+/* .sns-list__link:hover,
+.sns-list__link:focus {
+  background-color: black;
+}
+.sns-list__link:hover .sns-list__icon,
+.sns-list__link:focus .sns-list__icon {
+  fill: coral;
+} */

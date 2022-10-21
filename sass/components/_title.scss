@@ -1,0 +1,5 @@
+.title {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    @include fonts(700, 42, 1.2, 0.05em);
+}

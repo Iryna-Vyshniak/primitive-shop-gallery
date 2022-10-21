@@ -1,0 +1,22 @@
+.pre-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include fonts(600, 11, 1.36em);
+    text-transform: uppercase;
+
+    &::before {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: currentColor;
+}
+}
+
+.pre-title--color-light{
+    color: $pre-title--color-light;
+}
+
+.pre-title--color-dark{
+    color: $pre-title--color-dark;
+}

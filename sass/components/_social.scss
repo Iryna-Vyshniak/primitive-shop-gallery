@@ -1,0 +1,40 @@
+.social {
+   display: none;
+  @include tablet {
+    display: flex;
+    width: 100px;
+    align-items: flex-end;
+    padding-left: 27px;
+    padding-bottom: 40px;
+  }
+}
+
+.social__list {
+    @include tablet {
+            display: flex;
+            transform: rotate(-90deg) translateY(100%);
+            transform-origin: bottom left;
+            align-items: center;
+            gap: 40px;
+    &::before {
+            content: '';
+            width: 60px;
+            height: 1px;
+            background-color: currentColor;
+        }
+    }
+}
+
+.social__link {
+    @include tablet{
+    @include fonts(600, 11, 1.36, 0.02);
+    color: $secondary-title-color;
+    
+    @include transition ();
+    transition-property: color;
+    &:focus,
+    &:hover{
+        color: $accent-color;
+    }
+    }
+}
