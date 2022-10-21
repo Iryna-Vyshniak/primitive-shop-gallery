@@ -4,7 +4,7 @@ const GoodsList = {
   products: [
     {
       title: 'Exercitation ex minim',
-      image: '../img/climbing-min.jpg',
+      image: './img/climbing-min.jpg',
       alt: 'Climbing',
       width: 400,
       id: 1,
@@ -12,7 +12,7 @@ const GoodsList = {
     },
     {
       title: 'Aliquip nulla consectetur',
-      image: '../img/sea-min.jpg',
+      image: './img/sea-min.jpg',
       alt: 'Sea',
       width: 400,
       id: 2,
@@ -20,7 +20,7 @@ const GoodsList = {
     },
     {
       title: 'Laboris dolore proident.',
-      image: '../img/photographer-min.jpg',
+      image: './img/photographer-min.jpg',
       alt: 'Photographer',
       width: 400,
       id: 3,
@@ -28,7 +28,7 @@ const GoodsList = {
     },
     {
       title: 'Officia eiusmod proident',
-      image: '../img/thin-min.jpg',
+      image: './img/thin-min.jpg',
       alt: 'Thin',
       width: 400,
       id: 4,
