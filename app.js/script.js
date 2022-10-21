@@ -36,7 +36,7 @@ const GoodsList = {
     },
     {
       title: 'Duis veniam esse voluptate',
-      image: '../img/alessio-min.jpg',
+      image: './img/alessio-min.jpg',
       alt: 'Alessio',
       width: 400,
       id: 5,
@@ -44,7 +44,7 @@ const GoodsList = {
     },
     {
       title: 'Deserunt consequat proident',
-      image: '../img/boat-min.jpg',
+      image: './img/boat-min.jpg',
       alt: 'Boat',
       width: 400,
       id: 6,
@@ -52,7 +52,7 @@ const GoodsList = {
     },
     {
       title: 'Do sint ad sint nulla',
-      image: '../img/cuevas-min.jpg',
+      image: './img/cuevas-min.jpg',
       alt: 'Cuevas',
       width: 400,
       id: 7,
@@ -60,7 +60,7 @@ const GoodsList = {
     },
     {
       title: 'Deserunt consequat proident',
-      image: '../img/friends-min.jpg',
+      image: './img/friends-min.jpg',
       alt: 'Friends',
       width: 400,
       id: 8,
@@ -68,7 +68,7 @@ const GoodsList = {
     },
     {
       title: 'Do aliquip culpa',
-      image: '../img/girl-min.jpg',
+      image: './img/girl-min.jpg',
       alt: 'Sea',
       width: 400,
       id: 9,
@@ -76,7 +76,7 @@ const GoodsList = {
     },
     {
       title: 'Dexercitationure occaecat',
-      image: '../img/ireland-min.jpg',
+      image: './img/ireland-min.jpg',
       alt: 'Island',
       width: 400,
       id: 10,
@@ -84,7 +84,7 @@ const GoodsList = {
     },
     {
       title: 'Nostrud eiusmod',
-      image: '../img/mount-min.jpg',
+      image: './img/mount-min.jpg',
       alt: 'Mount',
       width: 400,
       id: 11,
@@ -92,7 +92,7 @@ const GoodsList = {
     },
     {
       title: 'Velit officia qui dolor',
-      image: '../img/street-min.jpg',
+      image: './img/street-min.jpg',
       alt: 'Street',
       width: 400,
       id: 12,
@@ -100,7 +100,7 @@ const GoodsList = {
     },
     {
       title: 'Duis veniam esse voluptate',
-      image: '../img/train-min.jpg',
+      image: './img/train-min.jpg',
       alt: 'Train',
       width: 400,
       id: 13,
@@ -108,7 +108,7 @@ const GoodsList = {
     },
     {
       title: 'Tempor magna ad consectetur',
-      image: '../img/water-house-min.jpg',
+      image: './img/water-house-min.jpg',
       alt: 'Water house',
       width: 400,
       id: 14,
@@ -116,7 +116,7 @@ const GoodsList = {
     },
     {
       title: 'Reprehenderit',
-      image: '../img/bridge-min.jpg',
+      image: './img/bridge-min.jpg',
       alt: 'Bridge',
       width: 400,
       id: 15,
@@ -124,7 +124,7 @@ const GoodsList = {
     },
     {
       title: 'Enim ipsum mollit',
-      image: '../img/hot-girl-min.jpg',
+      image: './img/hot-girl-min.jpg',
       alt: 'China',
       width: 400,
       id: 16,
@@ -165,7 +165,7 @@ const GoodsList = {
       title.className = 'gallery__item-title title';
 
       let price = document.createElement('p');
-      price.textContent = item.price + 'ua';
+      price.textContent = item.price + '$';
       price.className = 'gallery__item-price';
 
       let button = document.createElement('button');
