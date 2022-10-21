@@ -9,7 +9,9 @@
     text-transform: uppercase;
     border: 1px solid $accent-color;
     border-radius: 25px;
-    background-color: transparent;
+    background: linear-gradient(145deg, #93b7ff, #7b9add);
+    box-shadow:  5px 5px 10px #6179ae,
+                 -2px -2px 5px #b1ddff;
 
     @include transition ();
     transition-property: color, background-color;

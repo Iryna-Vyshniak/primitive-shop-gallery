@@ -1,4 +1,11 @@
+html{
+    background-image: radial-gradient( circle 993px at 0.5% 10.5%,  rgba(137,171,245,0.87) 10%, rgba(245,247,252,1) 90.2%);
+}
+
 body {
+    height: 100vh;
+    padding-top: $header-height;
+    margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;

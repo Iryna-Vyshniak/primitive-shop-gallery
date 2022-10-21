@@ -18,10 +18,27 @@
 </head>
 
 <body>
-    <header></header>
+    <header class="header">
+        <div id="cart" class="cart">
+            <div class="cart__title">
+                <svg
+                      class="cart__icon"
+                      width="30"
+                      height="30"
+                      aria-label="cart"
+                    >
+                      <use class="cart__goods" href="./img/icons.svg#icon-cart"></use>
+                    </svg>
+            </div>
+            <div class="cart__info">
+                <div class="goods-in-cart">Goods in cart: <span>0</span></div>
+                <div class="total-price">Total price: <span>0</span>$</div>
+            </div>
+        </div>
+    </header>
     <main>
-        <ul id="gallery" class="gallery">
 
+        <ul id="gallery" class="gallery">
         </ul>
     </main>
 
