@@ -19,7 +19,7 @@ const GoodsList = {
       price: 300,
     },
     {
-      title: 'Laboris dolore proident.',
+      title: 'Laboris dolore proident',
       image: './img/photographer-min.jpg',
       alt: 'Photographer',
       width: 400,
@@ -33,6 +33,102 @@ const GoodsList = {
       width: 400,
       id: 4,
       price: 150,
+    },
+    {
+      title: 'Duis veniam esse voluptate',
+      image: '../img/alessio-min.jpg',
+      alt: 'Alessio',
+      width: 400,
+      id: 5,
+      price: 550,
+    },
+    {
+      title: 'Deserunt consequat proident',
+      image: '../img/boat-min.jpg',
+      alt: 'Boat',
+      width: 400,
+      id: 6,
+      price: 250,
+    },
+    {
+      title: 'Do sint ad sint nulla',
+      image: '../img/cuevas-min.jpg',
+      alt: 'Cuevas',
+      width: 400,
+      id: 7,
+      price: 350,
+    },
+    {
+      title: 'Deserunt consequat proident',
+      image: '../img/friends-min.jpg',
+      alt: 'Friends',
+      width: 400,
+      id: 8,
+      price: 550,
+    },
+    {
+      title: 'Do aliquip culpa',
+      image: '../img/girl-min.jpg',
+      alt: 'Sea',
+      width: 400,
+      id: 9,
+      price: 750,
+    },
+    {
+      title: 'Dexercitationure occaecat',
+      image: '../img/ireland-min.jpg',
+      alt: 'Island',
+      width: 400,
+      id: 10,
+      price: 250,
+    },
+    {
+      title: 'Nostrud eiusmod',
+      image: '../img/mount-min.jpg',
+      alt: 'Mount',
+      width: 400,
+      id: 11,
+      price: 550,
+    },
+    {
+      title: 'Velit officia qui dolor',
+      image: '../img/street-min.jpg',
+      alt: 'Street',
+      width: 400,
+      id: 12,
+      price: 250,
+    },
+    {
+      title: 'Duis veniam esse voluptate',
+      image: '../img/train-min.jpg',
+      alt: 'Train',
+      width: 400,
+      id: 13,
+      price: 150,
+    },
+    {
+      title: 'Tempor magna ad consectetur',
+      image: '../img/water-house-min.jpg',
+      alt: 'Water house',
+      width: 400,
+      id: 14,
+      price: 250,
+    },
+    {
+      title: 'Reprehenderit',
+      image: '../img/bridge-min.jpg',
+      alt: 'Bridge',
+      width: 400,
+      id: 15,
+      price: 650,
+    },
+    {
+      title: 'Enim ipsum mollit',
+      image: '../img/hot-girl-min.jpg',
+      alt: 'China',
+      width: 400,
+      id: 16,
+      price: 750,
     },
   ],
 
@@ -94,3 +190,18 @@ const GoodsList = {
 };
 
 GoodsList.render();
+
+/*
+class GoodItem {
+  id = '';
+  title = 'default title';
+  image = '';
+  alt = '';
+  width = 0;
+  price = 0;
+}
+
+const good = new GoodItem();
+
+console.log(good);
+*/
