@@ -1,1 +1,1 @@
-# primitive-online-shop
+# primitive-shop-gallery
