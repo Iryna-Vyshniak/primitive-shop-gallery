@@ -192,7 +192,32 @@ const GoodsList = {
 GoodsList.render();
 */
 
+class Component{
+  myFavouriteMovie = 'Exercitation ex minim';
+constructor(id){
+  this.parentElementId = id;
+}
+
+createRenderedElement(tag, className, attributes, content){
+let element = document.createElement(tag);
+element.className = className;
+
+if (attributes){
+    for (const attribute of attributes){
+    element.setAttribute(attribute.name, attribute.value)
+  }
+}
+if(content) element.innerHTML = content;
+return element;
+}
+
+}
+
+
 class GoodItem {
+shopName = 'My Movie Shop';
+category = 'Movies';
+
   id = '';
   title = 'default title';
   image = '';
@@ -210,11 +235,9 @@ class GoodItem {
   }
 }
 
-const good = new GoodItem();
-
-console.log(good);
-
 class GoodList {
+shopName = 'My Movie Shop';
+
   products = [
     new GoodItem(1, 'Exercitation ex minim', './img/climbing-min.jpg', 'Climbing', 400, 200),
     new GoodItem(2, 'Aliquip nulla consectetur', './img/sea-min.jpg', 'Sea', 400, 300),
@@ -238,26 +261,31 @@ class GoodList {
 
   // show these products in html in #id gallery
   render() {
-    //   <ul></ul>
-    const parentSet = document.getElementById('gallery');
+    const parentSet = document.getElementById('gallery'); //   <ul></ul>
 
     for (const item of this.products) {
-    let renderedGood = new RenderedGood(item.id, item.link, item.thumb, item.image, item.descr, item.title, item.price, item.btn);
+    let renderedGood = new RenderedGood(item.id, item.link, item.thumb, item.image, item.alt, item.width, item.descr, item.title, item.price, item.btn);
     
+    console.log(renderedGood);
     const renderedElement = renderedGood.render();
-      // ul + li...
-      parentSet.appendChild(renderedElement);
+     
+    parentSet.appendChild(renderedElement);  // ul > li...
     }
+
   }
 }
 
-class RenderedGood {
+class RenderedGood extends Component {
 
-    constructor(id, link, thumb, image, descr, title, price, btn){
+    constructor(id, a, thumb, image, alt, width, descr, title, price, btn){
+    super('gallery');
+
     this.id = id;
-    this.link = link;
+    this.a = a;
     this.thumb = thumb;
     this.image = image;
+    this.alt = alt;
+    this.width = width;
     this.descr = descr;
     this.title = title;
     this.price = price;
@@ -266,40 +294,15 @@ class RenderedGood {
     }
  render(){
 //  <li>...</li>
-let element = document.createElement('li');
-
-element.id = 'good-' + this.id;
-element.className = 'gallery__item';
-
-let itemLink = document.createElement('a');
-itemLink.setAttribute('href', '#');
-itemLink.classList.add('gallery__item-link');
-
-let thumbImg = document.createElement('div');
-thumbImg.classList.add('gallery__item-thumb');
-
-let img = document.createElement('img');
-img.className = 'gallery__item-img';
-img.src = this.image;
-img.alt = this.alt;
-img.width = this.width;
-
-let elementBlock = document.createElement('div');
-elementBlock.classList.add('gallery__item-descr');
-
-let title = document.createElement('h2');
-title.textContent = this.title;
-title.className = 'gallery__item-title title';
-
-let price = document.createElement('p');
-price.textContent = this.price + '$';
-price.className = 'gallery__item-price';
-
-let button = document.createElement('button');
-button.textContent = 'Buy';
-button.className = 'buy-btn btn';
-
-button.addEventListener('click', () => {} );
+let element = this.createRenderedElement('li', 'gallery__item', [{name:'id', value:'good-' + this.id }]);
+let itemLink = this.createRenderedElement('a', 'gallery__item-link', [{name:'href', value:'#'}]);
+let thumbImg = this.createRenderedElement('div', 'gallery__item-thumb');
+let img = this.createRenderedElement('img', 'gallery__item-img', [{name:'src', value: this.image }, {name:'alt', value: this.alt }, {name:'width', value: this.width } ]);
+let elementBlock = this.createRenderedElement('div', 'gallery__item-descr');
+let title = this.createRenderedElement('h2', 'gallery__item-title title', [], this.title);
+let price = this.createRenderedElement('p', 'gallery__item-price', [], this.price + '$');
+let button = this.createRenderedElement('button', 'buy-btn btn', [], 'Buy');
+button.addEventListener('click', this.addGoodToCart.bind(this));
 
 //   li > img + div > title + price + btn
 thumbImg.appendChild(img);
@@ -315,15 +318,45 @@ element.appendChild(itemLink);
 return element;
 }
 
+addGoodToCart(){
+Shop.cart.updateCart(this);
 }
 
+}
 
 class Cart {
+
+  #personalInformation = "00001"; // # before => for doesn`t show to console, will be underfined
     constructor(){
-    
+    this.goodsInCart = [];
+    }
+
+get totalPrice(){
+  const sum = this.goodsInCart.reduce((prevValue, currentItem) => {return prevValue + currentItem.price}, 0); 
+  return sum;
+}
+    updateCart(good){
+    this.goodsInCart.push(good);
+   
+    let cartElement = document.getElementById('cart');
+
+    cartElement.querySelector('.goods-in-cart span').innerHTML = this.goodsInCart.length;
+    cartElement.querySelector('.total-price span').innerHTML = this.totalPrice;
+
+    console.log(this);
     }
 }
 
-const goodList = new GoodList();
+class Shop{
+static goodList;
+static cart;
 
-goodList.render();
+static init (){
+  this.goodList = new GoodList();
+  this.cart = new Cart();
+  this.goodList.render();
+}
+}
+
+
+Shop.init();
