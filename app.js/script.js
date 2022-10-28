@@ -213,8 +213,8 @@ class Component {
 }
 
 class GoodItem {
-  shopName = 'My Movie Shop';
-  category = 'Movies';
+  // shopName = 'My Movie Shop';
+  // category = 'Movies';
 
   id = '';
   title = 'default title';
@@ -234,19 +234,12 @@ class GoodItem {
 }
 
 class GoodList {
-  shopName = 'My Movie Shop';
+  // shopName = 'My Movie Shop';
 
   products = [
     new GoodItem(1, 'Exercitation ex minim', './img/climbing-min.jpg', 'Climbing', 400, 200),
     new GoodItem(2, 'Aliquip nulla consectetur', './img/sea-min.jpg', 'Sea', 400, 300),
-    new GoodItem(
-      3,
-      'Laboris dolore proident',
-      './img/photographer-min.jpg',
-      'Photographer',
-      400,
-      250
-    ),
+    new GoodItem(3, 'Laboris dolore proident', './img/photographer-min.jpg', 'Photographer', 400, 250),
     new GoodItem(4, 'Officia eiusmod proident', './img/thin-min.jpg', 'Thin', 400, 150),
     new GoodItem(5, 'Duis veniam esse voluptate', './img/alessio-min.jpg', 'Alessio', 400, 550),
     new GoodItem(6, 'Deserunt consequat proident', './img/boat-min.jpg', 'Boat', 400, 250),
@@ -257,19 +250,12 @@ class GoodList {
     new GoodItem(11, 'Nostrud eiusmod', './img/mount-min.jpg', 'Mount', 400, 550),
     new GoodItem(11, 'Velit officia qui dolor', './img/street-min.jpg', 'Street', 400, 250),
     new GoodItem(13, 'Duis veniam esse voluptate', './img/train-min.jpg', 'Train', 400, 150),
-    new GoodItem(
-      14,
-      'Tempor magna ad consectetur',
-      './img/water-house-min.jpg',
-      'Water house',
-      400,
-      250
-    ),
+    new GoodItem(14, 'Tempor magna ad consectetur', './img/water-house-min.jpg', 'Water house', 400, 250),
     new GoodItem(15, 'Reprehenderit', './img/bridge-min.jpg', 'Bridge', 400, 650),
     new GoodItem(16, 'Enim ipsum mollit', './img/hot-girl-min.jpg', 'China', 400, 750),
   ];
 
-  constructor() {}
+  constructor() { }
 
   // show these products in html in #id gallery
   render() {
@@ -278,7 +264,7 @@ class GoodList {
     for (const item of this.products) {
       let renderedGood = new RenderedGood(
         item.id,
-        item.link,
+        item.a,
         item.thumb,
         item.image,
         item.alt,
@@ -329,7 +315,7 @@ class RenderedGood extends Component {
     let elementBlock = this.createRenderedElement('div', 'gallery__item-descr');
     let title = this.createRenderedElement('h2', 'gallery__item-title title', [], this.title);
     let price = this.createRenderedElement('p', 'gallery__item-price', [], this.price + '$');
-    let button = this.createRenderedElement('button', 'buy-btn btn', [], 'Buy');
+    let button = this.createRenderedElement('button', 'buy-btn btn', [{ name: 'data-action', value: 'counter' }], 'Buy');
     button.addEventListener('click', this.addGoodToCart.bind(this));
 
     //   li > img + div > title + price + btn
@@ -387,3 +373,21 @@ class Shop {
 }
 
 Shop.init();
+
+
+// bell-notification cart 
+const desiredTag = document.querySelector('.notification-bell-container');
+desiredTag.setAttribute("current - count", 7);
+
+
+let counterValue = 0;
+// const valueRef = document.querySelector('current-count');
+const counterBtn = document.querySelector('[data-action="counter"]')
+
+
+const onClickCounterBtn = event => {
+  counterValue += 1;
+  desiredTag.textContent = counterValue;
+}
+counterBtn.addEventListener('click', onClickCounterBtn);
+

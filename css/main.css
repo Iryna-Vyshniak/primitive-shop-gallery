@@ -267,6 +267,28 @@ img {
   min-height: 44px;
 }
 
+.notification-bell-container {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.notification-bell-container::after {
+  position: absolute;
+  top: -10px;
+  right: -7px;
+  content: attr(current-count);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 12px;
+  background-color: rgb(251, 5, 5);
+  color: #ffffff;
+}
+
 .gallery {
   display: flex;
   align-items: center;
@@ -286,7 +308,7 @@ img {
   z-index: 2;
   border-radius: 4px;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
-  transform: scale(1.4);
+  transform: scale(1.1);
 }
 @media screen and (max-width: 479.98px) {
   .gallery__item:not(:last-child) {

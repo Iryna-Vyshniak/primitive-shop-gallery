@@ -2,3 +2,25 @@
 width: 100%;
 min-height: $header-height;
 }
+
+.notification-bell-container{
+position: relative;
+width: 30px;
+height: 30px;
+}
+
+.notification-bell-container::after{
+position: absolute;
+top: -10px;
+right: -7px;
+content: attr(current-count);
+display: flex;
+align-items: center;
+justify-content: center;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+font-size: 12px;
+background-color: rgb(251, 5, 5);
+color: #ffffff;
+}

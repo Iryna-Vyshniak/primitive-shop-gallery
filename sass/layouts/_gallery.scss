@@ -19,7 +19,7 @@ flex-wrap: wrap;
             z-index: 2;
             border-radius: 4px;
             box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
-            transform: scale(1.4);
+            transform: scale(1.1);
         }
 @include pre-mobile{
 &:not(:last-child) {
